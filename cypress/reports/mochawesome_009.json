@@ -1,0 +1,172 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 2,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-08-02T22:49:02.958Z",
+    "end": "2022-08-02T22:49:16.430Z",
+    "duration": 13472,
+    "testsRegistered": 4,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "de32ade0-6416-4f5b-b30b-945e8907b716",
+      "title": "",
+      "fullFile": "cypress/integration/04.SaveExpensesForm_spec.js",
+      "file": "cypress/integration/04.SaveExpensesForm_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "51d6736e-c533-4628-9b5d-76039527dd4a",
+          "title": "4 - Salve todas as informações do formulário no estado global",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a soma de despesas do header foi atualizada e os inputs voltaram ao valor inicial",
+              "timedOut": null,
+              "duration": 2877,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '52.28');\ncy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('have.value', '');\ncy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('have.value', '');",
+              "err": {},
+              "uuid": "62695c6d-34cc-4867-9022-efe9f2f3cdd1",
+              "parentUUID": "51d6736e-c533-4628-9b5d-76039527dd4a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona uma despesa e verifica se a despesa foi salva no estado global",
+              "timedOut": null,
+              "duration": 1979,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\n(0, _helperFunctions.addExpense)(expense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [_objectSpread(_objectSpread({}, expense), {}, {\n  id: 0,\n  exchangeRates: _data.mockData\n})]);",
+              "err": {},
+              "uuid": "ccf014e5-e0ea-4c4b-981e-d4a1d331fa2a",
+              "parentUUID": "51d6736e-c533-4628-9b5d-76039527dd4a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Verifica se a API é chamada a cada vez que o botão 'Adicionar despesa' é clicado",
+              "timedOut": null,
+              "duration": 3048,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const expense = {\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares'\n};\ncy.get('@mockFetch').should('be.calledOnce');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledTwice');\n(0, _helperFunctions.addExpense)(expense);\ncy.get('@mockFetch').should('be.calledThrice');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > acc.toFixed is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > acc.toFixed is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at http://localhost:3000/static/js/main.chunk.js:126:18\n    at Array.reduce (<anonymous>)\n    at Header.render (http://localhost:3000/static/js/main.chunk.js:124:64)\n    at finishClassComponent (http://localhost:3000/static/js/1.chunk.js:23177:35)\n    at updateClassComponent (http://localhost:3000/static/js/1.chunk.js:23130:28)\n    at beginWork (http://localhost:3000/static/js/1.chunk.js:24590:20)\n    at HTMLUnknownElement.callCallback (http://localhost:3000/static/js/1.chunk.js:6269:18)\n    at Object.invokeGuardedCallbackDev (http://localhost:3000/static/js/1.chunk.js:6318:20)\n    at invokeGuardedCallback (http://localhost:3000/static/js/1.chunk.js:6371:35)\n    at beginWork$1 (http://localhost:3000/static/js/1.chunk.js:29132:11)\n    at performUnitOfWork (http://localhost:3000/static/js/1.chunk.js:28099:16)\n    at workLoopSync (http://localhost:3000/static/js/1.chunk.js:28072:26)\n    at performSyncWorkOnRoot (http://localhost:3000/static/js/1.chunk.js:27690:13)\n    at http://localhost:3000/static/js/1.chunk.js:17210:28\n    at unstable_runWithPriority (http://localhost:3000/static/js/1.chunk.js:41822:16)\n    at runWithPriority$1 (http://localhost:3000/static/js/1.chunk.js:17156:14)\n    at flushSyncCallbackQueueImpl (http://localhost:3000/static/js/1.chunk.js:17205:11)\n    at flushSyncCallbackQueue (http://localhost:3000/static/js/1.chunk.js:17193:7)\n    at batchedUpdates$1 (http://localhost:3000/static/js/1.chunk.js:27796:11)\n    at Object.notify (http://localhost:3000/static/js/1.chunk.js:34268:7)\n    at Subscription.notifyNestedSubs (http://localhost:3000/static/js/1.chunk.js:34339:20)\n    at Subscription.handleChangeWrapper (http://localhost:3000/static/js/1.chunk.js:34344:12)\n    at dispatch (http://localhost:3000/static/js/1.chunk.js:40277:7)\n    at http://localhost:3000/static/js/1.chunk.js:40028:16\n    at dispatch (http://localhost:3000/static/js/1.chunk.js:40695:28)\n    at http://localhost:3000/static/js/main.chunk.js:824:7",
+                "diff": null
+              },
+              "uuid": "b0475fbe-f7d6-4f72-90f6-6aced255eef3",
+              "parentUUID": "51d6736e-c533-4628-9b5d-76039527dd4a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "fullTitle": "4 - Salve todas as informações do formulário no estado global Adiciona duas despesas e verifica se o estado global e header foram atualizados",
+              "timedOut": null,
+              "duration": 3100,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const firstExpense = {\n  id: 0,\n  value: '11',\n  currency: 'USD',\n  method: 'Cartão de crédito',\n  tag: 'Lazer',\n  description: 'Onze dólares',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(firstExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense]);\nconst secondExpense = {\n  id: 1,\n  value: '20',\n  currency: 'EUR',\n  method: 'Cartão de débito',\n  tag: 'Trabalho',\n  description: 'Vinte euros',\n  exchangeRates: _data.mockData\n};\n(0, _helperFunctions.addExpense)(secondExpense);\ncy.window().its('store').invoke('getState').its('wallet.expenses').should('deep.equal', [firstExpense, secondExpense]);\ncy.getByTestId(_constants.TOTAL_FIELD_TEST_ID).should('have.text', '154.82');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > acc.toFixed is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > acc.toFixed is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at http://localhost:3000/static/js/main.chunk.js:126:18\n    at Array.reduce (<anonymous>)\n    at Header.render (http://localhost:3000/static/js/main.chunk.js:124:64)\n    at finishClassComponent (http://localhost:3000/static/js/1.chunk.js:23177:35)\n    at updateClassComponent (http://localhost:3000/static/js/1.chunk.js:23130:28)\n    at beginWork (http://localhost:3000/static/js/1.chunk.js:24590:20)\n    at HTMLUnknownElement.callCallback (http://localhost:3000/static/js/1.chunk.js:6269:18)\n    at Object.invokeGuardedCallbackDev (http://localhost:3000/static/js/1.chunk.js:6318:20)\n    at invokeGuardedCallback (http://localhost:3000/static/js/1.chunk.js:6371:35)\n    at beginWork$1 (http://localhost:3000/static/js/1.chunk.js:29132:11)\n    at performUnitOfWork (http://localhost:3000/static/js/1.chunk.js:28099:16)\n    at workLoopSync (http://localhost:3000/static/js/1.chunk.js:28072:26)\n    at performSyncWorkOnRoot (http://localhost:3000/static/js/1.chunk.js:27690:13)\n    at http://localhost:3000/static/js/1.chunk.js:17210:28\n    at unstable_runWithPriority (http://localhost:3000/static/js/1.chunk.js:41822:16)\n    at runWithPriority$1 (http://localhost:3000/static/js/1.chunk.js:17156:14)\n    at flushSyncCallbackQueueImpl (http://localhost:3000/static/js/1.chunk.js:17205:11)\n    at flushSyncCallbackQueue (http://localhost:3000/static/js/1.chunk.js:17193:7)\n    at batchedUpdates$1 (http://localhost:3000/static/js/1.chunk.js:27796:11)\n    at Object.notify (http://localhost:3000/static/js/1.chunk.js:34268:7)\n    at Subscription.notifyNestedSubs (http://localhost:3000/static/js/1.chunk.js:34339:20)\n    at Subscription.handleChangeWrapper (http://localhost:3000/static/js/1.chunk.js:34344:12)\n    at dispatch (http://localhost:3000/static/js/1.chunk.js:40277:7)\n    at http://localhost:3000/static/js/1.chunk.js:40028:16\n    at dispatch (http://localhost:3000/static/js/1.chunk.js:40695:28)\n    at http://localhost:3000/static/js/main.chunk.js:824:7",
+                "diff": null
+              },
+              "uuid": "8bb72a48-301f-4900-8a37-de49a7eaf467",
+              "parentUUID": "51d6736e-c533-4628-9b5d-76039527dd4a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "62695c6d-34cc-4867-9022-efe9f2f3cdd1",
+            "ccf014e5-e0ea-4c4b-981e-d4a1d331fa2a"
+          ],
+          "failures": [
+            "b0475fbe-f7d6-4f72-90f6-6aced255eef3",
+            "8bb72a48-301f-4900-8a37-de49a7eaf467"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11004,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
