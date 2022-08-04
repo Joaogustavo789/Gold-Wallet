@@ -26,6 +26,7 @@ const wallet = (state = INITIAL_STATE, action) => {
   case DELETE_VALUES:
     return {
       ...state,
+      expenses: state.expenses.filter((ele) => ele.id !== action.deleted),
     };
   default:
     return state;

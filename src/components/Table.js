@@ -5,7 +5,7 @@ import { deleteValuesTable } from '../redux/actions/index';
 
 class Table extends Component {
   render() {
-    const { expenseTable, deleteValuesTable } = this.props;
+    const { expenseTable, exclude } = this.props;
     return (
       <table>
         <thead>
@@ -40,7 +40,7 @@ class Table extends Component {
                 <button
                   type="button"
                   data-testid="delete-btn"
-                  onClick={ () => deleteValuesTable() }
+                  onClick={ () => exclude(el.id) }
                 >
                   Excluir
                 </button>
@@ -58,12 +58,14 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  exclude: () => dispatch(deleteValuesTable()),
+  exclude: (deleted) => dispatch(deleteValuesTable(deleted)),
 });
 
 Table.propTypes = {
   expenseTable: PropTypes.func.isRequired,
-  deleteValuesTable: PropTypes.func.isRequired,
+  exclude: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
+
+// preciso de um id
