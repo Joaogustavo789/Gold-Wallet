@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { deleteValuesTable } from '../redux/actions/index';
 
 class Table extends Component {
   render() {
-    const { expenseTable } = this.props;
+    const { expenseTable, deleteValuesTable } = this.props;
     return (
       <table>
         <thead>
@@ -21,8 +22,8 @@ class Table extends Component {
           </tr>
         </thead>
         <tbody>
-          {expenseTable.map((el, index) => (
-            <tr key={ index }>
+          {expenseTable.map((el) => (
+            <tr key={ el.id }>
               <td>{ el.description }</td>
               <td>{ el.tag }</td>
               <td>{ el.method }</td>
@@ -35,6 +36,15 @@ class Table extends Component {
                 }
               </td>
               <td>BRL</td>
+              <td>
+                <button
+                  type="button"
+                  data-testid="delete-btn"
+                  onClick={ () => deleteValuesTable() }
+                >
+                  Excluir
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -47,8 +57,13 @@ const mapStateToProps = (state) => ({
   expenseTable: state.wallet.expenses,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  exclude: () => dispatch(deleteValuesTable()),
+});
+
 Table.propTypes = {
   expenseTable: PropTypes.func.isRequired,
+  deleteValuesTable: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, null)(Table);
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

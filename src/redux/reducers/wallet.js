@@ -1,5 +1,5 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { RECEIVE_COINS, RECEIVE_COINS2 } from '../actions/index';
+import { RECEIVE_COINS, RECEIVE_COINS2, DELETE_VALUES } from '../actions/index';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -9,8 +9,8 @@ const INITIAL_STATE = {
 const wallet = (state = INITIAL_STATE, action) => {
   const newId = state.expenses.length;
   const newValueState = {
-    ...action.valueState,
     id: newId,
+    ...action.valueState,
     exchangeRates: action.coins2 };
   switch (action.type) {
   case RECEIVE_COINS:
@@ -22,6 +22,10 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: [...state.expenses, newValueState],
+    };
+  case DELETE_VALUES:
+    return {
+      ...state,
     };
   default:
     return state;

@@ -4,6 +4,7 @@ export const REQUEST_COINS = 'REQUEST_COINS';
 export const RECEIVE_COINS = 'RECEIVE_COINS';
 export const REQUEST_COINS2 = 'REQUEST_COINS2';
 export const RECEIVE_COINS2 = 'RECEIVE_COINS2';
+export const DELETE_VALUES = 'DELETE_VALUES';
 
 export const addUser = (email) => ({
   type: USER_STATE,
@@ -27,6 +28,11 @@ const coinsReceive2 = (valueState, coins2) => ({
   type: RECEIVE_COINS2,
   valueState,
   coins2,
+});
+
+export const deleteValuesTable = (deleted) => ({
+  type: DELETE_VALUES,
+  deleted,
 });
 
 export function getCoins() {
