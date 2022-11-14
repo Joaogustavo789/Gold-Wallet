@@ -8,11 +8,11 @@ Gold Wallet é uma aplicação que administra uma carteira que utiliza o `React`
 
 ### Instalação
 #### Primeiro é necessário fazer o clone do repositório para a sua máquina:
-```js
+```bash
 git clone git@github.com:Joaogustavo789/Gold-Wallet.git
 ```
 #### Depois é preciso entrar no repositório clonado:
-```js
+```bash
 cd Gold-Wallet
 ```
 #### Em seguida é necessário fazer a instalação das dependências do projeto:
