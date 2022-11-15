@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCoins, getCoins2 } from '../redux/actions/index';
+import '../styles/WalletForm.css';
 
 const stateFood = 'Alimentação';
 class WalletForm extends Component {
@@ -42,11 +43,12 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
     const { currencie } = this.props;
     return (
-      <main>
+      <main className="walletForm">
         <form>
           <label htmlFor="despesas">
-            Valor da Despesa:
+            <span className="valorDes">Valor da Despesa:</span>
             <input
+              className="inputValorDes"
               type="number"
               id="despesas"
               data-testid="value-input"
@@ -57,8 +59,9 @@ class WalletForm extends Component {
             />
           </label>
           <label htmlFor="descrição">
-            Descrição:
+            <span className="descrição">Descrição:</span>
             <textarea
+              className="inputDescri"
               id="descrição"
               data-testid="description-input"
               placeholder="Adicione sua descrição"
@@ -68,8 +71,9 @@ class WalletForm extends Component {
             />
           </label>
           <label htmlFor="moeda">
-            Moeda:
+            <span className="coinSelect">Moeda:</span>
             <select
+              className="inputCoin"
               id="moeda"
               data-testid="currency-input"
               value={ currency }
@@ -86,8 +90,9 @@ class WalletForm extends Component {
             </select>
           </label>
           <label htmlFor="pagamento">
-            Forma de Pagamento:
+            <span className="method">Forma de Pagamento:</span>
             <select
+              className="inputMethod"
               id="pagamento"
               data-testid="method-input"
               value={ method }
@@ -100,8 +105,9 @@ class WalletForm extends Component {
             </select>
           </label>
           <label htmlFor="categoria">
-            Categoria:
+            <span className="category">Categoria:</span>
             <select
+              className="inputCategory"
               id="categoria"
               data-testid="tag-input"
               value={ tag }
@@ -117,10 +123,11 @@ class WalletForm extends Component {
           </label>
         </form>
         <button
+          className="buttonDespesa"
           type="button"
           onClick={ this.changeClickInputs }
         >
-          Adicionar despesa
+          <span className="nameButtonDes">Adicionar despesa</span>
         </button>
       </main>
     );

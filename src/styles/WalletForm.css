@@ -1,0 +1,101 @@
+.walletForm {
+  align-items: center;
+  background: rgba(225, 229, 235, 0.49);
+  border-radius: 0;
+  display: flex;
+}
+
+.valorDes {
+  color: rgb(0, 59, 229);
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+
+.inputValorDes {
+  border: 1px solid gold;
+  border-radius: 5pxrgb(0, 59, 229);
+  box-sizing: border-box;
+  font-family: Epilogue, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.inputValorDes::placeholder {
+  color: gray;
+  font-size: 12px;
+}
+
+.descrição {
+  color: rgb(0, 59, 229);
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.inputDescri {
+  background: rgba(225, 229, 235, 0.49);
+  border: 1px solid gold;
+  border-radius: 0;
+}
+
+.coinSelect {
+  color: rgb(0, 59, 229);
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.inputCoin {
+  background: rgba(225, 229, 235, 0.49);
+  border: 1px solid gold;
+  border-radius: 0;
+}
+
+.method {
+  color: hwb(225 0% 10%);
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.inputMethod {
+  background: rgba(225, 229, 235, 0.49);
+  border: 1px solid gold;
+  border-radius: 0;
+}
+
+.category {
+  color: rgb(0, 59, 229);
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.inputCategory {
+  border: 1px solid gold;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.buttonDespesa {
+  background: gold;
+  border: 1px solid gold;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.nameButtonDes {
+  color: black;
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
