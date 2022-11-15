@@ -45,6 +45,14 @@ class Table extends Component {
                   Excluir
                 </button>
               </td>
+              <td>
+                <button
+                  type="button"
+                  data-testid="edit-btn"
+                >
+                  Editar
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -67,5 +75,3 @@ Table.propTypes = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
-
-// preciso de um id

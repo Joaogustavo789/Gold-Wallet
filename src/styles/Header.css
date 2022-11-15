@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.emailHeader {
+  color: rgb(47, 193, 140);
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.image-coins {
+  width: 20px;
+}
+
+.image-email {
+  width: 20px;
+}
+
+.despesas {
+  align-items: center;
+  color: rgb(0, 59, 229);
+  display: flex;
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.coinValue {
+  margin: 0 5px;
+}
+
+.coin {
+  color: rgb(0, 59, 229);
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+}

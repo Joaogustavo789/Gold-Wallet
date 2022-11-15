@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@1,100&family=Montserrat:ital,wght@1,300;1,400&family=Roboto+Condensed:wght@300&display=swap') ;
+
+.login {
+  background-color: rgb(47, 193, 140);
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  height: 380px;
+  left: 377px;
+  margin-left: 380px;
+  margin-top: 250px;
+  top: 201px;
+  width: 520px;
+}
+
+.nameGold {
+  color: gold;
+  font-size: 30px;
+  height: 33.79px;
+  left: 569.03px;
+  margin-right: 10px;
+  position: absolute;
+  top: 281.44px;
+  width: 85.88px;
+}
+
+.nameWallet {
+  border-radius: 10px;
+  color: blue;
+  height: 356px;
+  left: 377px;
+  margin-left: 5px;
+  top: 201px;
+  width: 525px;
+}
+
+.emailInput {
+  background: white;
+  border: 1px solid rgb(0, 59, 229);
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: Times New Roman, Times, serif;
+  height: 40px;
+  left: 475px;
+  margin-bottom: 15px;
+  margin-left: 100px;
+  margin-top: 100px;
+  text-align: center;
+  top: 360px;
+  width: 330px;
+}
+
+.emailInput::placeholder {
+  color: gray;
+  font-size: 20px;
+}
+
+.passwordInput {
+  background: white;
+  border: 1px solid rgb(0, 59, 229);
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: Times New Roman, Times, serif;
+  height: 40px;
+  left: 475px;
+  margin-left: 100px;
+  text-align: center;
+  top: 410px;
+  width: 330px;
+}
+
+.passwordInput::placeholder {
+  color: gray;
+  font-size: 20px;
+}
+
+.buttonEntrar {
+  background: rgb(0, 59, 229);
+  border: 1px solid rgb(0, 59, 229);
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: Epilogue, sans-serif;
+  height: 40px;
+  left: 475px;
+  position: absolute;
+  top: 460px;
+  width: 330px;
+}
+
+.nameButton {
+  color: white;
+  font-family: Epilogue, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  height: 14px;
+  left: 493.33px;
+  line-height: 14px;
+  text-align: center;
+  top: 473px;
+  width: 293.33px;
+}

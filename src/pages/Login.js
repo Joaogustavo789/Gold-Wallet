@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addUser } from '../redux/actions/index';
+import '../styles/Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -25,9 +26,13 @@ class Login extends React.Component {
     const caracterMin = 6;
     return (
       <main className="login">
-        <div>Login</div>
+        <div className="nameGold">
+          Gold
+          <span className="nameWallet">Wallet</span>
+        </div>
         <label htmlFor="email">
           <input
+            className="emailInput"
             type="email"
             data-testid="email-input"
             id="email"
@@ -39,6 +44,7 @@ class Login extends React.Component {
         </label>
         <label htmlFor="senha">
           <input
+            className="passwordInput"
             type="password"
             data-testid="password-input"
             id="senha"
@@ -49,11 +55,12 @@ class Login extends React.Component {
           />
         </label>
         <button
+          className="buttonEntrar"
           type="button"
           disabled={ !(this.validateEmail(email) && password.length >= caracterMin) }
           onClick={ () => { newUser(email); push('/carteira'); } }
         >
-          Entrar
+          <span className="nameButton">Entrar</span>
         </button>
       </main>
     );
